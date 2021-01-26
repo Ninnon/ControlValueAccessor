@@ -1,0 +1,48 @@
+<div class="customer-form-wrapper" [formGroup]="customerForm">
+    <div class="form-padding">
+        <h2>Sample customer form</h2>
+        <div class="input-container">
+            <input type="text" formControlName="firstName" placeholder="First name">
+        </div>
+        <div class="input-container">
+            <input type="text" formControlName="lastName" placeholder="Last name">
+        </div>
+        <div class="input-container">
+            <input type="text" formControlName="email" placeholder="Email">
+        </div>
+        <div>
+            <label class="age-label" for="age">Your age:</label>
+            <app-stepper formControlName="age"></app-stepper>
+        </div>
+        <div class="input-container">
+            <label for="wantsTextNotifications" class="notifications-label">Do you want to receive text notifications?</label>
+            <input type="checkbox" formControlName="wantsTextNotifications">
+        </div>
+        <br>
+        <hr class="hr">
+        <br>
+        <div class="spacer">
+            <p>First name: {{customerForm.get("firstName").value}}</p>
+            <p>First name status: {{customerForm.get("firstName").status}}</p>
+        </div>
+        <div class="spacer">
+            <p>Last name: {{customerForm.get("lastName").value}}</p>
+            <p>Last name status: {{customerForm.get("lastName").status}}</p>
+        </div>
+        <div class="spacer">
+            <p>Email: {{customerForm.get("email").value}}</p>
+            <p>Email status: {{customerForm.get("email").status}}</p>
+        </div>
+        <div class="spacer">
+            <p>Age: {{customerForm.get("age").value}}</p>
+            <p>Age status: {{customerForm.get("age").status}}</p>
+        </div>
+        <div class="spacer">
+            <p>Wants text notifications: {{customerForm.get("wantsTextNotifications").value}}</p>
+            <p>Wants text notifications status: {{customerForm.get("wantsTextNotifications").status}}</p>
+        </div>
+        <div class="spacer">
+            <p>Overall form status: <strong>{{this.customerForm.status}}</strong></p>
+        </div>
+    </div>
+</div>
